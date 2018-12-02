@@ -24,10 +24,11 @@ def main():
     if(is_sudo == None):
         print("Program must be run with sudo")
         exit()
-#    printRules()
-    app = gui.Window(gui.root)
-    gui.root.mainloop()
+    else:
+        app = gui.Window(gui.root)
+        gui.root.mainloop()
     return
+
 
 if __name__ == "__main__":
     main()

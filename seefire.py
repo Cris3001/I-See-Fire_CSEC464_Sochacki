@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # Firewall Tool By: Cristofer Sochacki
 import subprocess
+from subprocess import *
 import gui
 
 

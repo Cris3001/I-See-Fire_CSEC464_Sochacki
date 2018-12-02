@@ -9,7 +9,7 @@ def printRules():
 
 def main():
     print('running')
-
+    printRules()
     return
 
 if __name__ == "__main__":

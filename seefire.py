@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # Firewall Tool By: Cristofer Sochacki
 import subprocess
 

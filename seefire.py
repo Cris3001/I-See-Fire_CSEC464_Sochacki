@@ -7,10 +7,13 @@ import gui
 
 
 def getRules():
-    rules = check_output(["sudo", "iptables", "-S", ">"])
+    check_call(["sudo", "iptables", "-S", ">", "./temp.txt"])
+    rules = open("./temp.txt", "r")
+    rulesOut = rules.read()
+    rules.close()
 #    out = rules.stdout
 #    rules = "the rules\n"
-    return rules
+    return rulesOut
 
 
 def main():

@@ -1,14 +1,15 @@
 #!/usr/bin/python
 # Firewall Tool By: Cristofer Sochacki
-import subprocess
+from subprocess import *
 import gui
 
 
 
 def getRules():
-    rules = subprocess.call(["sudo", "iptables", "-S"])
+    rules = subprocess.Popen(["sudo", "iptables", "-S", ">"], stdout=PIPE)
+    out = rules.communicate()
 #    rules = "the rules\n"
-    return rules
+    return out
 
 
 def main():

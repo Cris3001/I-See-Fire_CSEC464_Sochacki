@@ -7,10 +7,10 @@ import gui
 
 
 def getRules():
-    rules = Popen(["sudo", "iptables", "-S", ">"], stdout=PIPE)
-    out = rules.stdout
+    rules = check_output(["sudo", "iptables", "-S", ">"])
+#    out = rules.stdout
 #    rules = "the rules\n"
-    return out
+    return rules
 
 
 def main():

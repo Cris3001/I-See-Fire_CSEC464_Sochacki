@@ -20,6 +20,10 @@ def getRules():
 
 def main():
     print('running')
+    is_sudo = os.getenv("SUDO_USER")
+    if(is_sudo == None):
+        print("Program must be run with sudo")
+        exit()
 #    printRules()
     app = gui.Window(gui.root)
     gui.root.mainloop()

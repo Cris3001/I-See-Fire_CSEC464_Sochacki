@@ -6,8 +6,8 @@ import gui
 
 
 def getRules():
-#    rules = subprocess.call(["sudo", "iptables", "-S"])
-    rules = "the rules\n"
+    rules = subprocess.call(["sudo", "iptables", "-S"])
+#    rules = "the rules\n"
     return rules
 
 

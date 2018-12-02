@@ -2,6 +2,11 @@
 # Firewall Tool By: Cristofer Sochacki
 import subprocess
 
+
+def printRules():
+    rules = subprocess.call(["sudo", "iptables", "-S"])
+    print(rules)
+
 def main():
     print('running')
 

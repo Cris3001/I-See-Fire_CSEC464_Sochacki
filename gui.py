@@ -42,7 +42,7 @@ class Window(Frame):
     def status_window(self):
         status_win = Toplevel(root)
         status_text = seefire.getStatus()
-        status_label = Label(status_win, text=status_text)
+        status_label = Text(status_win, text=status_text)
         status_label.place(x=0, y=0)
         status_label.pack
 

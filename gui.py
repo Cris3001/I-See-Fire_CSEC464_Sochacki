@@ -33,7 +33,8 @@ class Window(Frame):
         eventsButton.place(x=0, y=60)
 
     def rules_window(self):
-        rule_win = Toplevel(root)
+        rule_win = Toplevel()
+        rule_win.geometry('500x500')
         rule_text = seefire.getRules()
         rule_label = Label(rule_win, text=rule_text)
         rule_label.place(x=0, y=0)

@@ -44,6 +44,9 @@ class Window(Frame):
         treeview = tree
         seefire.getEvents(treeview)
 
+        tree.config(yscrollcommand=scrollbar.set)
+        scrollbar.config(commmand=tree.yview)
+
     def rules_window(self):
         rule_win = Toplevel(root)
         scrollbar = Scrollbar(rule_win)

@@ -2,6 +2,7 @@
 # Firewall Tool By: Cristofer Sochacki
 #import subprocess
 import os
+import ttl
 from subprocess import *
 import gui
 
@@ -15,10 +16,11 @@ def getRules():
     return rulesOut
 
 
-def getStatus():
+def getStatus(treeview):
     os.system("sudo cat /var/log/messages | grep \"iptables\" > temp2.txt")
     status = open("temp2.txt", "r")
-    status_out = status.read()
+    status_out = status.readline()
+    treeview.insert('', 'end', values=(status_out, ''))
     status.close()
     return status_out
 

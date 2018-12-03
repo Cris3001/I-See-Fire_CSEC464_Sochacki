@@ -34,6 +34,8 @@ class Window(Frame):
 
     def events_window(self):
         event_win = Toplevel(root)
+        scrollbar = Scrollbar(event_win)
+        scrollbar.pack(side=BOTTOM, fill=X)
         tree = ttk.Treeview(event_win, columns=('Date', 'Event'))
         tree.heading('#0', text='Date')
         tree.heading('#1', text='Event')
@@ -50,9 +52,6 @@ class Window(Frame):
         listbox = Listbox(rule_win, width=100)
         listbox.pack(fill=BOTH, expand=1)
         seefire.getRules(listbox)
-        #rule_label = Label(rule_win, text=rule_text)
-        #rule_label.place(x=0, y=0)
-        #rule_label.pack
 
         listbox.config(yscrollcommand=scrollbar.set)
         scrollbar.config(commmand=listbox.yview)

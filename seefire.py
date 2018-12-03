@@ -34,7 +34,8 @@ def getStatus(treeview):
                 splitline = cleanline.split(' ')
                 date = splitline[0] + ' ' + splitline[2] + ' ' + splitline[3]
                 status_string = splitline[6]
-                treeview.insert('', 'end', text=date, value=status_string)
+                program = splitline[10]
+                treeview.insert('', 'end', text=date, value=(status_string, program))
     fp.close()
     os.system("rm temp2.txt")
     return

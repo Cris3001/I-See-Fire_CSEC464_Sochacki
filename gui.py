@@ -47,7 +47,7 @@ class Window(Frame):
         tree.heading('#1', text='Status')
         tree.place(x=0, y=0)
         treeview = tree
-        status_text = seefire.getStatus(treeview)
+        seefire.getStatus(treeview)
 
 
 #        status_label = Text(status_win, text=status_text)

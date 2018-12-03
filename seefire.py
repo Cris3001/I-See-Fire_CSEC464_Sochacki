@@ -18,11 +18,19 @@ def getRules():
 
 def getStatus(treeview):
     os.system("sudo cat /var/log/messages | grep \"iptables\" > temp2.txt")
-    status = open("temp2.txt", "r")
-    status_out = status.readline()
-    treeview.insert('', 'end', text=(status_out, 'hi'))
-    status.close()
-    return status_out
+    status = "temp2.txt"
+    with open(status) as fp:
+        line = fp.readline()
+        cnt = 1
+        while line:
+            line = fp.readline()
+            cleanline = line.strip()
+            if ("Starting" or "Stopping") in cleanline:
+                #print("Line {}: {}".format(cnt, line.strip()))
+                cnt += 1
+                treeview.insert('', 'end', text=(cleanline))
+        status.close()
+    return
 
 
 def main():

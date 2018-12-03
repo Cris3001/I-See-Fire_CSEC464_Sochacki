@@ -40,7 +40,7 @@ def getStatus(treeview):
     return
 
 def getEvents(treeview):
-    os.system("sudo cat /var/log/messages | grep \"iptables\" > temp3.txt")
+    os.system("sudo cat /var/log/messages > temp3.txt")
     events = "temp3.txt"
     with open(events) as fp:
         line = fp.readline()

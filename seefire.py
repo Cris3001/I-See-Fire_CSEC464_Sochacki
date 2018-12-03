@@ -21,15 +21,13 @@ def getStatus(treeview):
     status = "temp2.txt"
     with open(status) as fp:
         line = fp.readline()
-        cnt = 1
         while line:
             line = fp.readline()
             cleanline = line.strip()
             if ("Starting" in cleanline) or ("Stopping" in cleanline):
-                #print("Line {}: {}".format(cnt, line.strip()))
-                cnt += 1
-                treeview.insert('', 'end', text=(cleanline))
-    status.close()
+                splitline = cleanline.split(' ')
+                treeview.insert('', 'end', text=(splitline[0:2]), value=(splitline[5:]))
+    fp.close()
     return
 
 

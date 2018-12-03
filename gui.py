@@ -1,9 +1,14 @@
-from Tkinter import *
+from tkinter import *
 import seefire
+import os
 
 
 class Window(Frame):
     def __init__(self, master=None):
+        is_sudo = os.getenv("SUDO_USER")
+        if (is_sudo == None):
+            print("Program must be run with sudo")
+            exit()
         Frame.__init__(self, master)
         self.master = master
         self.init_window()

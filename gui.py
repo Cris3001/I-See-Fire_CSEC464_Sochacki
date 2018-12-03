@@ -47,6 +47,9 @@ class Window(Frame):
         tree.heading('#0', text='Date')
         tree.heading('#1', text='Status')
 
+        tree.place(x=0, y=0)
+
+
 #        status_label = Text(status_win, text=status_text)
 #        status_label.place(x=0, y=0)
 #        status_label.pack

@@ -51,8 +51,13 @@ def getEvents(treeview):
             if ("IN=" in cleanline) and ("OUT=" in cleanline):
                 splitline = cleanline.split(' ')
                 date = splitline[0] + ' ' + splitline[2] + ' ' + splitline[3]
-                status_string = splitline[6]
-                treeview.insert('', 'end', text=date, value=status_string)
+                cnt = splitline.count()
+                index = 4
+                events_string = ''
+                while cnt > index:
+                    events_string += splitline[index]
+                    index += 1
+                treeview.insert('', 'end', text=date, value=events_string)
     fp.close()
     os.system("rm temp3.txt")
     return

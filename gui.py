@@ -25,12 +25,22 @@ class Window(Frame):
         rulesButton.pack()
         statusButton = Button(self, text="Status", command=self.status_window)
         statusButton.pack()
-        eventsButton = Button(self, text="Events")
+        eventsButton = Button(self, text="Events", command=self.events_window)
 
         # placing the button on my window
         rulesButton.place(x=0, y=0)
         statusButton.place(x=0, y=30)
         eventsButton.place(x=0, y=60)
+
+    def events_window(self):
+        event_win = Toplevel(root)
+        tree = ttk.Treeview(event_win, columns=('Date', 'Event'))
+        tree.heading('#0', text='Date')
+        tree.heading('#1', text='Event')
+        tree.place(x=0, y=0)
+        tree.pack()
+        treeview = tree
+        seefire.getEvents(treeview)
 
     def rules_window(self):
         rule_win = Toplevel(root)

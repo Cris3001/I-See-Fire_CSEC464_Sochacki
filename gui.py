@@ -34,10 +34,18 @@ class Window(Frame):
 
     def rules_window(self):
         rule_win = Toplevel(root)
+        scrollbar = Scrollbar(rule_win)
+        scrollbar.pack(side=RIGHT, fill=Y)
+
+        listbox = Listbox(rule_win)
+        listbox.pack()
         rule_text = seefire.getRules()
-        rule_label = Label(rule_win, text=rule_text)
-        rule_label.place(x=0, y=0)
-        rule_label.pack
+        #rule_label = Label(rule_win, text=rule_text)
+        #rule_label.place(x=0, y=0)
+        #rule_label.pack
+        listbox.insert(END, rule_text)
+        listbox.config(yscrollcommand=scrollbar.set)
+        scrollbar.config(commmand=listbox.yview)
 
 
     def status_window(self):
@@ -51,15 +59,12 @@ class Window(Frame):
         seefire.getStatus(treeview)
 
 
-#        status_label = Text(status_win, text=status_text)
-#        status_label.place(x=0, y=0)
-#        status_label.pack
 
 
 root = Tk()
 
 # size of the window
-root.geometry("400x300")
+root.geometry("200x200")
 
 app = Window(root)
 root.mainloop()

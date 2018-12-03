@@ -34,18 +34,13 @@ class Window(Frame):
 
     def events_window(self):
         event_win = Toplevel(root)
-        scrollbar = Scrollbar(event_win)
-        scrollbar.pack(side=BOTTOM, fill=X)
         tree = ttk.Treeview(event_win, columns=('Date', 'Event'))
         tree.heading('#0', text='Date')
         tree.heading('#1', text='Event')
         tree.place(x=0, y=0)
-        tree.pack()
+        tree.pack(fill=BOTH, fill=Y)
         treeview = tree
         seefire.getEvents(treeview)
-
-        tree.config(yscrollcommand=scrollbar.set)
-        scrollbar.config(commmand=tree.yview)
 
     def rules_window(self):
         rule_win = Toplevel(root)

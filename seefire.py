@@ -14,7 +14,7 @@ def getRules(listbox):
         line = fp.readline()
         while line:
             line = fp.readline()
-            listbox.insert(listbox.END, line)
+            listbox.insert('end', line)
     fp.close()
     os.system("rm temp.txt")
     return

@@ -51,7 +51,7 @@ def getEvents(treeview):
             if ("IN=" in cleanline) and ("OUT=" in cleanline):
                 splitline = cleanline.split(' ')
                 date = splitline[0] + ' ' + splitline[2] + ' ' + splitline[3]
-                cnt = splitline.count()
+                cnt = len(splitline)
                 index = 4
                 events_string = ''
                 while cnt > index:

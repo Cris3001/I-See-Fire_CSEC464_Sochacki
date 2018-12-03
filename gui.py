@@ -38,7 +38,7 @@ class Window(Frame):
         tree.heading('#0', text='Date')
         tree.heading('#1', text='Event')
         tree.place(x=0, y=0)
-        tree.pack(fill=BOTH, fill=Y)
+        tree.pack(fill=BOTH, expand=1)
         treeview = tree
         seefire.getEvents(treeview)
 

@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # Firewall Tool By: Cristofer Sochacki
-#import subprocess
 import os
 import ttk
 from subprocess import *

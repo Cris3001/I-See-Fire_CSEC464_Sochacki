@@ -2,7 +2,7 @@
 # Firewall Tool By: Cristofer Sochacki
 #import subprocess
 import os
-import ttl
+import ttk
 from subprocess import *
 import gui
 

@@ -26,7 +26,7 @@ def getStatus(treeview):
             cleanline = line.strip()
             if ("Starting" in cleanline) or ("Stopping" in cleanline):
                 splitline = cleanline.split(' ')
-                treeview.insert('', 'end', text=(splitline[0] +' ' + splitline[2], +' ' + splitline[3]),
+                treeview.insert('', 'end', text=(splitline[0] + ' ' + splitline[2] + ' ' + splitline[3]),
                                 value=(splitline[6:10]))
     fp.close()
     return

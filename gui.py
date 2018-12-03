@@ -38,7 +38,7 @@ class Window(Frame):
         tree.heading('#0', text='Date')
         tree.heading('#1', text='Event')
         tree.column('#0', width=150)
-        tree.column('#1', width=500)
+        tree.column('#1', width=700)
         tree.column('#2', width=0)
         tree.place(x=0, y=0)
         tree.pack(fill=BOTH, expand=1)
@@ -47,15 +47,15 @@ class Window(Frame):
 
     def rules_window(self):
         rule_win = Toplevel(root)
-        scrollbar = Scrollbar(rule_win)
-        scrollbar.pack(side=RIGHT, fill=Y)
+#        scrollbar = Scrollbar(rule_win)
+#        scrollbar.pack(side=RIGHT, fill=Y)
 
         listbox = Listbox(rule_win, width=100)
         listbox.pack(fill=BOTH, expand=1)
         seefire.getRules(listbox)
 
-        listbox.config(yscrollcommand=scrollbar.set)
-        scrollbar.config(commmand=listbox.yview)
+#        listbox.config(yscrollcommand=scrollbar.set)
+#        scrollbar.config(commmand=listbox.yview)
 
 
     def status_window(self):

@@ -37,7 +37,7 @@ class Window(Frame):
         scrollbar = Scrollbar(rule_win)
         scrollbar.pack(side=RIGHT, fill=Y)
 
-        listbox = Listbox(rule_win)
+        listbox = Listbox(rule_win, selectmode=EXTENDED)
         listbox.pack()
         seefire.getRules(listbox)
         #rule_label = Label(rule_win, text=rule_text)

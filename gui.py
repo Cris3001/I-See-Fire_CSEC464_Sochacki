@@ -1,4 +1,5 @@
 from Tkinter import *
+import ttk
 import seefire
 import os
 
@@ -42,6 +43,10 @@ class Window(Frame):
     def status_window(self):
         status_win = Toplevel(root)
         status_text = seefire.getStatus()
+        tree = ttk.Treeview(self.parent, columns=('Date', 'Status'))
+        tree.heading('#0', text='Date')
+        tree.heading('#1', text='Status')
+
         status_label = Text(status_win, text=status_text)
         status_label.place(x=0, y=0)
         status_label.pack

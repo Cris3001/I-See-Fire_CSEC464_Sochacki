@@ -37,6 +37,7 @@ class Window(Frame):
         tree = ttk.Treeview(event_win, columns=('Date', 'Event'))
         tree.heading('#0', text='Date')
         tree.heading('#1', text='Event')
+        tree.column('#2', width=0)
         tree.place(x=0, y=0)
         tree.pack(fill=BOTH, expand=1)
         treeview = tree

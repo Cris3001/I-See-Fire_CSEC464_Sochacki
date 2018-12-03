@@ -39,11 +39,11 @@ class Window(Frame):
 
         listbox = Listbox(rule_win)
         listbox.pack()
-        rule_text = seefire.getRules()
+        seefire.getRules(listbox)
         #rule_label = Label(rule_win, text=rule_text)
         #rule_label.place(x=0, y=0)
         #rule_label.pack
-        listbox.insert(END, rule_text)
+
         listbox.config(yscrollcommand=scrollbar.set)
         scrollbar.config(commmand=listbox.yview)
 

@@ -7,12 +7,17 @@ import gui
 
 
 
-def getRules():
+def getRules(listbox):
     os.system("sudo iptables -S > temp.txt")
-    rules = open("temp.txt", "r")
-    rulesOut = rules.read()
-    rules.close()
-    return rulesOut
+    rules = "temp.txt"
+    with open(rules) as fp:
+        line = fp.readline()
+        while line:
+            line = fp.readline()
+            listbox.insert(END, line)
+    fp.close()
+    os.system("rm temp.txt")
+    return
 
 
 def getStatus(treeview):

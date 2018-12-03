@@ -20,7 +20,7 @@ def getStatus(treeview):
     os.system("sudo cat /var/log/messages | grep \"iptables\" > temp2.txt")
     status = open("temp2.txt", "r")
     status_out = status.readline()
-    treeview.insert('', 'end', values=(status_out, ''))
+    treeview.insert('hi', 'end', values=(status_out, 'hi'))
     status.close()
     return status_out
 

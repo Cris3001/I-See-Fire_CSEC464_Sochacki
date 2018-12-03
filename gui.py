@@ -43,7 +43,7 @@ class Window(Frame):
     def status_window(self):
         status_win = Toplevel(root)
         status_text = seefire.getStatus()
-        tree = ttk.Treeview(self.parent, columns=('Date', 'Status'))
+        tree = ttk.Treeview(status_win, columns=('Date', 'Status'))
         tree.heading('#0', text='Date')
         tree.heading('#1', text='Status')
 

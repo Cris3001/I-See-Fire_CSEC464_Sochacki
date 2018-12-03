@@ -25,11 +25,11 @@ def getStatus(treeview):
         while line:
             line = fp.readline()
             cleanline = line.strip()
-            if ("Starting" or "Stopping") in cleanline:
+            if ("Starting" in cleanline) or ("Stopping" in cleanline):
                 #print("Line {}: {}".format(cnt, line.strip()))
                 cnt += 1
                 treeview.insert('', 'end', text=(cleanline))
-        status.close()
+    status.close()
     return
 
 

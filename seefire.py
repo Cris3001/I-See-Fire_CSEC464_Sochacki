@@ -24,10 +24,11 @@ def getStatus(treeview):
         while line:
             line = fp.readline()
             cleanline = line.strip()
-            if ("Starting" in cleanline) or ("Stopping" in cleanline):
+            if ("Starting" in cleanline) or ("Stopping" in cleanline) or ("Started" in cleanline) or\
+                    ("Stopped" in cleanline):
                 splitline = cleanline.split(' ')
                 date = splitline[0] + ' ' + splitline[2] + ' ' + splitline[3]
-                status_string = splitline[6:10]
+                status_string = splitline[6]
                 treeview.insert('', 'end', text=date, value=status_string)
     fp.close()
     return
